@@ -1,0 +1,39 @@
+{
+  "name": "deta-worker",
+  "version": "0.1.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/woozyking/deta-worker.git"
+  },
+  "private": false,
+  "main": "dist/index.js",
+  "source": "src/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir dist --copy-files",
+    "prepublishOnly": "npm i && npm build",
+    "lint": "eslint src"
+  },
+  "keywords": ["worker", "fetch", "service worker", "deta", "cloudflare"],
+  "author": "Runzhou Li (Leo) <runzhou.li@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "deta": "^1.0.0",
+    "eslint": "^7.32.0",
+    "node-fetch": "^3.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@babel/runtime": "^7.15.3"
+  }
+}
