@@ -1,7 +1,7 @@
 {
   "name": "deta-worker",
   "version": "0.1.0",
-  "description": "",
+  "description": "Fetch API-based deta js library for browser and Service Worker environments",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/woozyking/deta-worker.git"
@@ -17,7 +17,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --out-dir dist --copy-files",
-    "prepublishOnly": "npm i && npm build",
+    "prepublishOnly": "npm i && npm run build",
     "lint": "eslint src"
   },
   "keywords": ["worker", "fetch", "service worker", "deta", "cloudflare"],

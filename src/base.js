@@ -89,7 +89,7 @@ BaseClass.prototype.update = async function(/* updates, key */) {
   throw new Error('Not implemented')
 }
 
-BaseClass.prototype.fetch = async function (query, options) {
+BaseClass.prototype.fetch = async function(query, options) {
   const opts = Object.entries(options).reduce((acc, [k, v]) => {
     if (v !== undefined) {
       acc[k] = k ==='limit' ? parseInt(v, 10) : v
