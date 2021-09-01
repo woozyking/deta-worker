@@ -8,10 +8,10 @@ API parity (vs. the official Deta JS SDK):
 
 - Base
     - [ ] `__test__`
-    - [x] `.put(data, key = null)`
+    - [x] `.put(data, key=null)`
     - [x] `.get(key)`
     - [x] `.delete(key)`
-    - [x] `.insert(data, key = null)`
+    - [x] `.insert(data, key=null)`
     - [x] `.putMany(items)`
     - [ ] `.update(updates, key)`
     - [x] `.fetch(query, options)`
@@ -24,3 +24,11 @@ API parity (vs. the official Deta JS SDK):
     - [ ] `.list(options)`
 
 _Note: this library works in Node.js with a monkey-patched global `fetch()` (such as through [node-fetch](https://github.com/node-fetch/node-fetch)), but why?_
+
+## Installation
+
+```shell
+% npm i deta-worker
+% # or
+% yarn add deta-worker
+```
