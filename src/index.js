@@ -1,4 +1,4 @@
-import BaseClass from './base.js'
+import BaseClass from './base/index.js'
 
 function DetaClass(key) {
   this.id = key.trim().split('_')[0]

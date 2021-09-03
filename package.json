@@ -20,7 +20,13 @@
     "prepublishOnly": "npm i && npm run build",
     "lint": "eslint src"
   },
-  "keywords": ["worker", "fetch", "service worker", "deta", "cloudflare"],
+  "keywords": [
+    "worker",
+    "fetch",
+    "service worker",
+    "deta",
+    "cloudflare"
+  ],
   "author": "Runzhou Li (Leo) <runzhou.li@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -29,6 +35,7 @@
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "deta": "^1.0.0",
+    "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "node-fetch": "^3.0.0"
   },

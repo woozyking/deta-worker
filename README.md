@@ -2,7 +2,7 @@
 
 Fetch API-based deta js library for browser and Service Worker environments.
 
-This library fills the need to interact with Deta HTTP APIs in Cloudflare Workers, and the official [Deta JS SDK](https://github.com/deta/deta-javascript) is not working out-of-the-box with such a Service Worker environment. The API usage patterns of this library aim to be nearly identical to the official SDK.
+This library fills the need to interact with Deta HTTP APIs in Cloudflare Workers, and the official [Deta JS SDK](https://github.com/deta/deta-javascript) is not working out-of-the-box with such a Service Worker environment. The high-level API usage patterns of this library aim to be nearly identical to the official SDK.
 
 API parity (vs. the official Deta JS SDK):
 
@@ -13,7 +13,7 @@ API parity (vs. the official Deta JS SDK):
     - [x] `.delete(key)`
     - [x] `.insert(data, key=null)`
     - [x] `.putMany(items)`
-    - [ ] `.update(updates, key)`
+    - [X] `.update(updates, key)`
     - [x] `.fetch(query, options)`
 - Drive
     - [ ] `__test__`

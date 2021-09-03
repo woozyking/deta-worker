@@ -1,3 +1,5 @@
+import utils, { Action, ACTION_TYPES } from './utils.js'
+
 function BaseClass(headers, baseURL) {
   this.headers = headers
   this.baseURL = baseURL
@@ -85,8 +87,36 @@ BaseClass.prototype.putMany = async function(items) {
   throw new Error((res.errors || [])[0] || 'Unable to put items')
 }
 
-BaseClass.prototype.update = async function(/* updates, key */) {
-  throw new Error('Not implemented')
+BaseClass.prototype.update = async function(updates, key) {
+  // build updates payload
+  const payload = {}
+  Object.entries(updates).forEach(([field, v]) => {
+    if (v instanceof Action) {
+      if (v.action === ACTION_TYPES.Delete) {
+        payload[v.action] = [
+          ...payload[v.action] || [],
+          field,
+        ]
+      } else {
+        payload[v.action] = {
+          ...payload[v.action] || {},
+          [field]: v.value,
+        }
+      }
+    } else { // implied ACTION_TYPES.Set
+      payload[ACTION_TYPES.Set] = {
+        ...payload[ACTION_TYPES.Set] || {},
+        [field]: v,
+      }
+    }
+  })
+  const req = await fetch(`${this.baseURL}/items/${key}`, {
+    method: 'PATCH',
+    headers: this.headers,
+    body: JSON.stringify(payload),
+  })
+  const res = await req.json()
+  return req.ok ? null : res
 }
 
 BaseClass.prototype.fetch = async function(query, options) {
@@ -111,5 +141,7 @@ BaseClass.prototype.fetch = async function(query, options) {
     items,
   }
 }
+
+BaseClass.prototype.util = utils
 
 export default BaseClass
