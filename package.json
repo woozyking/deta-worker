@@ -1,6 +1,6 @@
 {
   "name": "deta-worker",
-  "version": "0.1.0",
+  "version": "0.2.0-alpha",
   "description": "Fetch API-based deta js library for browser and Service Worker environments",
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "babel src --out-dir dist --copy-files",
     "prepublishOnly": "npm i && npm run build",
     "lint": "eslint src"
@@ -37,6 +37,8 @@
     "deta": "^1.0.0",
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
+    "eslint-plugin-jest": "^24.4.0",
+    "jest": "^27.1.0",
     "node-fetch": "^3.0.0"
   },
   "type": "module",
