@@ -1,9 +1,13 @@
 import BaseClass from './base/index.js'
 
 function DetaClass(key) {
-  this.id = key.trim().split('_')[0]
+  const k = (key || '').trim()
+  if (!k) {
+    throw new Error('Project key is not defined')
+  }
+  this.id = k.split('_')[0]
   this.headers = {
-    'X-API-Key': key.trim(),
+    'X-API-Key': k,
     'Content-Type': 'application/json',
   }
 }
